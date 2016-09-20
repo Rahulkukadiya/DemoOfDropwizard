@@ -1,0 +1,19 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 3000
+logging: 
+  level: ALL
+  appenders: 
+    - type: file
+#      threshold: INFO,WARN,ERROR,DEBUG,TRACE
+      currentLogFilename: ./logs/logfile.log
+      archivedLogFilenamePattern: ./logs/archive.%d.log.gz
+database:
+    properties: 
+        hibernate.dialect: org.hibernate.dialect.MySQLDialect
+        hibernate.hbm2ddl.auto: update
+    driverClass: com.mysql.jdbc.Driver
+    user: root    
+    password: root
+    url: jdbc:mysql://localhost:3306/DWGettingStarted1
